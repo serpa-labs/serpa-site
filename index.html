@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Serpa is a group of connected SEO products sharing one launcher, one Google sign-in and one admin panel, including the Indexa backlink marketplace.">
+<meta name="description" content="Serpa is a group of connected SEO products sharing one launcher, one Google sign-in and one admin panel. Its public product is Tota, the aioseo.fr publication.">
 <title>Serpa</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
@@ -45,6 +45,8 @@ nav .links a:hover{color:var(--fg)}
 .center ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;font-size:14.5px;color:var(--muted)}
 .center li::before{content:"";display:inline-block;width:7px;height:7px;background:var(--accent);border-radius:50%;margin-right:10px;vertical-align:middle}
 .side{display:grid;gap:14px}
+.mod.pub{border-color:var(--accent)}
+.mod .lock{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
 .mod{border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:var(--surface)}
 .mod b{font-family:var(--f-mono);font-size:14px;color:var(--accent);font-weight:500}
 .mod p{margin:4px 0 0;font-size:14px;color:var(--muted)}
@@ -80,20 +82,20 @@ html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}
 <div class="wrap">
   <nav>
     <a class="brand" href="#top">Serpa</a>
-    <div class="links"><a href="#platform">Platform</a><a href="#indexa">Indexa</a><a href="#build">Build</a></div>
+    <div class="links"><a href="#platform">Platform</a><a href="#tota">Tota</a><a href="#build">Build</a></div>
   </nav>
 
   <header class="hero" id="top">
     <div class="eyebrow">Search growth tooling</div>
     <h1>One launcher for every tool a <i>search team</i> needs.</h1>
     <p class="lede">Serpa is a group of connected SEO products that share one sign-in, one admin panel and one Mac app. Each product solves a single job. Together they remove the setup work between ideas and results.</p>
-    <div class="cta"><a class="btn" href="#platform">See the platform</a><a class="btn o" href="#indexa">Meet Indexa</a></div>
+    <div class="cta"><a class="btn" href="#platform">See the platform</a><a class="btn o" href="#tota">Meet Tota</a></div>
   </header>
 
   <div class="hub" id="platform">
     <div class="side">
-      <div class="mod"><b>Indexa</b><p>Marketplace for sponsored articles and backlinks.</p></div>
-      <div class="mod"><b>Vigia</b><p>Runs on the Serpa platform.</p></div>
+      <div class="mod"><b>Indexa</b><p class="lock">Private product</p></div>
+      <div class="mod"><b>Vigia</b><p class="lock">Private product</p></div>
     </div>
     <div class="center">
       <div class="eyebrow">Serpa launcher</div>
@@ -106,8 +108,8 @@ html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}
       </ul>
     </div>
     <div class="side">
-      <div class="mod"><b>Sonda</b><p>Runs on the Serpa platform.</p></div>
-      <div class="mod"><b>Tota</b><p>Opens the WordPress admin of aioseo.fr.</p></div>
+      <div class="mod"><b>Sonda</b><p class="lock">Private product</p></div>
+      <div class="mod pub"><b>Tota</b><p>Public product. The aioseo.fr publication, run on Serpa.</p></div>
     </div>
   </div>
 
@@ -122,32 +124,33 @@ html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}
     </div>
   </section>
 
-  <section id="indexa" style="border-top:0;padding-top:16px">
+  <section id="tota" style="border-top:0;padding-top:16px">
     <div class="indexa">
       <div>
-        <div class="eyebrow">Flagship product</div>
-        <h2>Indexa</h2>
-        <p>A marketplace where publishers list sponsored articles and backlinks, and advertisers buy them with clear pricing and clear placement rules.</p>
-        <p>Built for the Algerian market, where this kind of buying is mostly informal and handled through private messages.</p>
-        <div class="chips" style="margin-top:18px"><span>Publishers</span><span>Advertisers</span><span>Algeria first</span></div>
+        <div class="eyebrow">Public product</div>
+        <h2>Tota</h2>
+        <p>Tota is the public side of Serpa: aioseo.fr, an independent publication on Generative Engine Optimization and SEO, published and administered from the Serpa launcher.</p>
+        <p>It is the live site where the methods behind the other tools are tested and written up in the open.</p>
+        <div class="cta" style="margin-top:18px"><a class="btn" href="https://aioseo.fr" target="_blank" rel="noopener">Visit aioseo.fr</a></div>
       </div>
       <div>
-        <div class="eyebrow" style="margin-bottom:10px">How a purchase flows</div>
+        <div class="eyebrow" style="margin-bottom:10px">What runs on it</div>
         <ol class="steps">
-          <li><span>List</span>A publisher describes a site, its topics and its price per article or link.</li>
-          <li><span>Order</span>An advertiser picks a placement and submits the brief.</li>
-          <li><span>Publish</span>The publisher posts the article with the agreed link.</li>
-          <li><span>Verify</span>The link and its attributes are checked before the order closes.</li>
+          <li><span>Content</span>Guides, tool comparisons and a public glossary of 81 GEO and LLM terms.</li>
+          <li><span>Agents</span>A public read-only MCP server and WebMCP so AI agents can read the site.</li>
+          <li><span>AI policy</span>Robots rules that allow search, AI input and AI training.</li>
+          <li><span>Data</span>Articles built on first-party Search Console figures.</li>
         </ol>
       </div>
     </div>
+    <p class="sub" style="margin:28px 0 0">The other Serpa products are used internally and their code and details stay private.</p>
   </section>
 
   <section id="build">
     <div class="eyebrow">Under the hood</div>
     <h2>Built by a practitioner, tested on real sites.</h2>
     <p class="sub">Serpa products are developed alongside aioseo.fr, an independent GEO and SEO publication, so each tool is used on a live site before it ships.</p>
-    <div class="chips"><span>Python</span><span>Mac app packaging</span><span>Google sign-in</span><span>WordPress admin</span><span>Database and environment access</span><span>Private source code</span></div>
+    <div class="chips"><span>Python</span><span>Mac app packaging</span><span>Google sign-in</span><span>WordPress admin</span><span>Private source code</span></div>
   </section>
 
   <footer>
