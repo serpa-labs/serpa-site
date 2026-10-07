@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Serpa is a group of connected SEO products sharing one launcher, one Google sign-in and one admin panel, including the Indexa backlink marketplace.">
+<title>Serpa</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: dark-first, one centered statement, then a hub diagram (launcher in the middle, products around it), then plain ruled sections */
+:root{
+  --bg:#0B1F1E; --surface:#112A28; --fg:#EAF1EE; --muted:#9DB5AF; --line:#21423F;
+  --accent:#E3A83B; --accent-ink:#1A1204; --accent-soft:rgba(227,168,59,.14);
+  --f-display:'Instrument Serif',Georgia,serif;
+  --f-body:'Manrope',system-ui,sans-serif;
+  --f-mono:'JetBrains Mono',ui-monospace,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#F1F5F3;--surface:#FFFFFF;--fg:#0B1F1E;--muted:#45605B;--line:#CFDAD6;--accent:#A8680A;--accent-ink:#FFFFFF;--accent-soft:rgba(168,104,10,.1);color-scheme:light}}
+:root[data-theme="light"]{--bg:#F1F5F3;--surface:#FFFFFF;--fg:#0B1F1E;--muted:#45605B;--line:#CFDAD6;--accent:#A8680A;--accent-ink:#FFFFFF;--accent-soft:rgba(168,104,10,.1);color-scheme:light}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.65;padding-inline:20px;padding-block:0}
+.wrap{max-width:1040px;margin:0 auto}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;margin:0;line-height:1.05;text-wrap:balance;letter-spacing:-.01em}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px;flex-wrap:wrap}
+.brand{font-family:var(--f-display);font-size:30px;text-decoration:none}
+nav .links{display:flex;gap:22px;font-size:14px;flex-wrap:wrap}
+nav .links a{text-decoration:none;color:var(--muted)}
+nav .links a:hover{color:var(--fg)}
+.hero{padding-block:64px 56px;max-width:860px}
+.hero h1{font-size:clamp(46px,8vw,92px);margin:16px 0 24px}
+.hero h1 i{color:var(--accent)}
+.lede{font-size:19px;color:var(--muted);max-width:56ch;margin:0 0 30px}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;background:var(--accent);color:var(--accent-ink)}
+.btn.o{background:transparent;color:var(--fg);border:1px solid var(--line);margin-left:8px}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.cta .btn.o{margin-left:0}
+.hub{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:20px;align-items:center;padding-block:24px 64px}
+.hub>div{min-width:0}
+.center{background:var(--surface);border:1px solid var(--accent);border-radius:16px;padding:26px;text-align:left}
+.center h3{font-size:30px;margin:8px 0 12px}
+.center ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;font-size:14.5px;color:var(--muted)}
+.center li::before{content:"";display:inline-block;width:7px;height:7px;background:var(--accent);border-radius:50%;margin-right:10px;vertical-align:middle}
+.side{display:grid;gap:14px}
+.mod{border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:var(--surface)}
+.mod b{font-family:var(--f-mono);font-size:14px;color:var(--accent);font-weight:500}
+.mod p{margin:4px 0 0;font-size:14px;color:var(--muted)}
+section{padding-block:64px;border-top:1px solid var(--line)}
+section h2{font-size:clamp(34px,5vw,56px);margin:12px 0 18px;max-width:18ch}
+section p.sub{color:var(--muted);max-width:60ch;font-size:17px;margin:0 0 30px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.grid3>div{min-width:0}
+.grid3 h3{font-size:26px;margin-bottom:8px}
+.grid3 p{margin:0;color:var(--muted);font-size:15.5px}
+.indexa{display:grid;grid-template-columns:1fr 1fr;gap:40px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:36px}
+.indexa>div{min-width:0}
+.indexa h2{margin-top:10px}
+.indexa p{margin:0 0 12px;color:var(--muted)}
+.steps{margin:0;padding:0;list-style:none;display:grid;gap:0;border-top:1px solid var(--line)}
+.steps li{display:grid;grid-template-columns:96px 1fr;gap:12px;padding-block:14px;border-bottom:1px solid var(--line);font-size:15px}
+.steps span{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);padding-top:3px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-family:var(--f-mono);font-size:13px;border:1px solid var(--line);padding:6px 12px;border-radius:999px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding-block:36px 56px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+footer b{color:var(--fg)}
+@media (max-width:860px){
+  .hub,.grid3,.indexa{grid-template-columns:1fr}
+  .indexa{padding:24px}
+  .hero{padding-block:36px 40px}
+  .steps li{grid-template-columns:1fr;gap:2px}
+}
+html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="#top">Serpa</a>
+    <div class="links"><a href="#platform">Platform</a><a href="#indexa">Indexa</a><a href="#build">Build</a></div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="eyebrow">Search growth tooling</div>
+    <h1>One launcher for every tool a <i>search team</i> needs.</h1>
+    <p class="lede">Serpa is a group of connected SEO products that share one sign-in, one admin panel and one Mac app. Each product solves a single job. Together they remove the setup work between ideas and results.</p>
+    <div class="cta"><a class="btn" href="#platform">See the platform</a><a class="btn o" href="#indexa">Meet Indexa</a></div>
+  </header>
+
+  <div class="hub" id="platform">
+    <div class="side">
+      <div class="mod"><b>Indexa</b><p>Marketplace for sponsored articles and backlinks.</p></div>
+      <div class="mod"><b>Vigia</b><p>Runs on the Serpa platform.</p></div>
+    </div>
+    <div class="center">
+      <div class="eyebrow">Serpa launcher</div>
+      <h3>The platform layer</h3>
+      <ul>
+        <li>Opens every product when the app starts</li>
+        <li>One Google sign-in, session kept</li>
+        <li>Admin panel for each product</li>
+        <li>Technical access: database, environment, code folder</li>
+      </ul>
+    </div>
+    <div class="side">
+      <div class="mod"><b>Sonda</b><p>Runs on the Serpa platform.</p></div>
+      <div class="mod"><b>Tota</b><p>Opens the WordPress admin of aioseo.fr.</p></div>
+    </div>
+  </div>
+
+  <section id="problem">
+    <div class="eyebrow">Why Serpa exists</div>
+    <h2>Small teams lose days to tool sprawl.</h2>
+    <p class="sub">An SEO practitioner juggles separate logins, separate dashboards and scripts that only run on one laptop. Serpa puts them behind a single entry point.</p>
+    <div class="grid3">
+      <div><h3>Fewer logins</h3><p>Every product signs in with the same Google account and stays signed in.</p></div>
+      <div><h3>Operator control</h3><p>Each product exposes its admin panel and its technical internals from the same place.</p></div>
+      <div><h3>Native app</h3><p>Packaged as a Mac application, built and released the same way as every other tool in the family.</p></div>
+    </div>
+  </section>
+
+  <section id="indexa" style="border-top:0;padding-top:16px">
+    <div class="indexa">
+      <div>
+        <div class="eyebrow">Flagship product</div>
+        <h2>Indexa</h2>
+        <p>A marketplace where publishers list sponsored articles and backlinks, and advertisers buy them with clear pricing and clear placement rules.</p>
+        <p>Built for the Algerian market, where this kind of buying is mostly informal and handled through private messages.</p>
+        <div class="chips" style="margin-top:18px"><span>Publishers</span><span>Advertisers</span><span>Algeria first</span></div>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:10px">How a purchase flows</div>
+        <ol class="steps">
+          <li><span>List</span>A publisher describes a site, its topics and its price per article or link.</li>
+          <li><span>Order</span>An advertiser picks a placement and submits the brief.</li>
+          <li><span>Publish</span>The publisher posts the article with the agreed link.</li>
+          <li><span>Verify</span>The link and its attributes are checked before the order closes.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="build">
+    <div class="eyebrow">Under the hood</div>
+    <h2>Built by a practitioner, tested on real sites.</h2>
+    <p class="sub">Serpa products are developed alongside aioseo.fr, an independent GEO and SEO publication, so each tool is used on a live site before it ships.</p>
+    <div class="chips"><span>Python</span><span>Mac app packaging</span><span>Google sign-in</span><span>WordPress admin</span><span>Database and environment access</span><span>Private source code</span></div>
+  </section>
+
+  <footer>
+    <div><b>Serpa</b> by Aslane Samai<br>GEO and SEO consultant, Master 2 IREN, Paris Dauphine PSL</div>
+    <div>Method and research: <a href="https://aioseo.fr" target="_blank" rel="noopener">aioseo.fr</a></div>
+  </footer>
+</div>
+</body>
+</html>
